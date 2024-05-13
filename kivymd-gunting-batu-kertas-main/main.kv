@@ -1,0 +1,154 @@
+MDScreenManager:
+    Home:
+        name:"home"
+    Pilih:
+        name:"pilih"
+    Hasil:
+        name:"hasil"
+
+
+<Home>:
+    MDBoxLayout:
+        pos_hint: {'center_x': 0.5,'center_y': 1}
+        orientation:"vertical"
+        MDButton:
+            theme_width: "Custom"
+            height: "56dp"
+            size_hint_x: .5
+            pos_hint: {'center_x': 0.5}
+            on_press: root.manager.current = "pilih"
+            MDButtonText:
+                text: 'START'
+                pos_hint: {"center_x": .5, "center_y": .5}
+            
+<Pilih>:
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDLabel:
+            text: "PILIH"
+            halign: "center"
+            font_style: "Headline"
+            role:"medium"
+            theme_text_color: "Custom"
+            text_color: "white"
+        MDBoxLayout:
+            adaptive_width: True
+            pos_hint: {'center_x': 0.5}
+            orientation: 'horizontal'
+            spacing: '20dp'
+            MDCard:
+                style:"elevated"
+                size_hint: None, None
+                size: '200dp','200dp'
+                on_press: root.click("batu")
+                MDRelativeLayout:         
+                    FitImage:
+                        source:"data/fist.png"
+            MDCard:
+                size_hint: None, None
+                size: '200dp','200dp'
+                on_press: root.click("kertas")
+                MDRelativeLayout:         
+                    FitImage:
+                        source:"data/hand-paper.png"
+            MDCard:
+                size_hint: None, None
+                size: '200dp','200dp'
+                on_press: root.click("gunting")
+                MDRelativeLayout:         
+                    FitImage:
+                        source:"data/scissors.png"
+        MDLabel:
+            text:""
+
+<Hasil>:
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: ["10dp","0dp"]
+        MDLabel:
+            id:ket
+            text: ""
+            theme_text_color:"Custom"
+            text_color:"white"
+            halign:"center"
+            font_style:"Display"
+            role:"small"
+            size_hint_y:.3
+        MDBoxLayout:
+            orientation: 'horizontal'
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: ["10dp","0dp"]
+                MDCard:
+                    size_hint: None, None
+                    size: '200dp', '200dp'
+                    MDRelativeLayout:
+                        FitImage:
+                            id:img_com
+                            source:""
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    MDLabel:
+                        text:"Computer"
+                        theme_text_color: "Custom"
+                        text_color:"white"
+                        halign:"center"
+                        font_style:"Headline"
+                        role:"medium"
+                    MDLabel:
+                        id:com_score
+                        text: ""
+                        theme_text_color: "Custom"
+                        text_color:"white"
+                        halign:"center"
+                        font_style:"Display"
+                        role:"small"
+
+
+            MDLabel:
+                text:"VS"
+                theme_text_color:"Custom"
+                text_color: "white"
+                halign:"center"
+                valign:"center"
+                font_style:"Headline"
+
+            MDBoxLayout:
+                orientation:"vertical"    
+                MDCard:
+                    size_hint: None, None
+                    size: '200dp', '200dp'
+                    MDRelativeLayout:
+                        FitImage:
+                            id:img_player
+                            source:""
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    MDLabel:
+                        text:"Player"
+                        theme_text_color: "Custom"
+                        text_color:"white"
+                        font_style:"Headline"
+                        role:"medium"
+                        halign:"center"
+                        
+                    MDLabel:
+                        id:player_score
+                        text: "" 
+                        theme_text_color: "Custom"
+                        text_color:"white"
+                        font_style:"Display"
+                        role:"small"
+                        halign:"center"
+        MDButton:
+            style:"elevated"
+            on_press: root.manager.current = "pilih"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            theme_width:"Custom"
+            size_hint_x:.4
+            MDButtonText:
+                text:"Lanjutkan"
+                pos_hint: {"center_x": .5, "center_y": .5}
+        MDLabel:
+            text:""
+            size_hint_y:.1
