@@ -6,5 +6,4 @@ def main():
   if usr_input.isnumeric():
     print(f"{usr_input} Radiant = {convert(int(usr_input)} degree")
 
-if __name__ == "__main__":
-  main()
+main()
