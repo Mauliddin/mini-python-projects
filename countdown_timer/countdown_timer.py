@@ -17,7 +17,7 @@ def input_check(text) -> int:
     if variabel.isnumeric():
         return int(variabel)
     else:
-        input_check(text)
+        return input_check(text)
 
 def main():
     hour = input_check("Hour")
